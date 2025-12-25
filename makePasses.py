@@ -43,14 +43,14 @@ def generate_password_list():
     filtered_info = [info for info in info_list if info]
 
 
-    count = int(get_input("لطفا تعداد پسوردهایی که می‌خواهید تولید شود را وارد کنید: "))
+    count = int(get_input("How many passwords should I create for you?: "))
     
 
     passwords = set()
 
 
     if not filtered_info:
-        print(Fore.RED + "هیچ اطلاعاتی برای تولید پسورد وجود ندارد." + Style.RESET_ALL)
+        print(Fore.RED + "No information for creating passwords." + Style.RESET_ALL)
         return
 
     for i in range(1, len(filtered_info) + 1):
@@ -61,7 +61,7 @@ def generate_password_list():
     password_list = list(passwords)[:count]
 
     
-    print(Fore.GREEN + "\nپسوردهای تولید شده:" + Style.RESET_ALL)
+    print(Fore.GREEN + "\nPasswords:" + Style.RESET_ALL)
     for password in password_list:
         print(password)
 
